@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="service.css" />
+</head>
+<body>
+
+<h1 class="page-title">Services</h1>
+
+<!-- Services Section -->
+<section class="services-section-container fade-in">
+  <div class="services-section">
+    <div class="card large" data-service="decor1" style="background-image: url('img/decor1.jpg');">
+      <div class="overlay">
+        <h2>Wedding Decor</h2>
+        <p>Elegant arrangements for unforgettable weddings.</p>
+        <button class="navigate-btn" data-service="decor1">Navigate</button>
+      </div>
+    </div>
+    <div class="card" data-service="decor2" style="background-image: url('img/decor2.jpg');">
+      <div class="overlay">
+        <h2>Event Styling</h2>
+        <p>Bring life to any event with our curated floral styles.</p>
+        <button class="navigate-btn" data-service="decor2">Navigate</button>
+      </div>
+    </div>
+    <div class="card" data-service="decor3" style="background-image: url('img/decor3.jpg');">
+      <div class="overlay">
+        <h2>Seasonal Bouquets</h2>
+        <p>Fresh, seasonal arrangements delivered to your door.</p>
+        <button class="navigate-btn" data-service="decor3">Navigate</button>
+      </div>
+    </div>
+  </div>
+  <div class="services-paragraph">
+    <p>Explore our floral expertise — from weddings to everyday bouquets. Let our blooms brighten your moments, big or small.</p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section fade-in">
+  <h1>What our customers say</h1>
+  <div class="testimonials scroll-row">
+    <div class="testimonial">
+      <p>The bouquet was absolutely stunning! Fresh blooms and beautifully arranged — my wife was over the moon.</p>
+      <span>Alice Morgan ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>Such a smooth ordering experience! The flowers arrived on time and smelled amazing. Highly recommend.</p>
+      <span>David Kim ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>I’ve never seen roses this vibrant. You can tell they care deeply about quality and detail.</p>
+      <span>Lana Becker ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>Ordered a sympathy arrangement and it was done with such grace and elegance. Thank you for the care.</p>
+      <span>Michael Torres ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>The staff was so kind and helpful when I wasn’t sure what to pick. Their suggestions were perfect!</p>
+      <span>Sophia Rao ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>Absolutely loved the dried flower bundle I received — it’s still making my room look lovely after weeks.</p>
+      <span>Nico Varela ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>I used their same-day delivery and it was flawless. The flowers arrived fresh and right on time.</p>
+      <span>Emily Zhang ★★★★★</span>
+    </div>
+    <div class="testimonial">
+      <p>The floral arrangements for my wedding were breathtaking. Every detail was perfect!</p>
+      <span>Grace Lim ★★★★★</span>
+    </div>
+  </div>
+</section>
+
+<!-- Essentials Section -->
+  <section class="essentials-section fade-in">
+    <div class="products">
+      <img src="img/product1.jpg" alt="Product 1">
+      <img src="img/product2.jpg" alt="Product 2">
+      <img src="img/product3.jpg" alt="Product 3">
+      <img src="img/product4.jpg" alt="Product 4">
+    </div>
+    <div class="product-info">
+      <h2>Gift Services</h2>
+      <p>Blah blah blah blah  blah  blah  Blah blah blah blah  blah  blah Blah blah blah blah  blah  blah.</p>
+      <button>Shop now</button>
+    </div>
+  </section>
+
+<!-- Popup Modal -->
+<div class="popup-modal" id="popupModal">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="popupTitle"></h2>
+    <p id="popupDesc"></p>
+    <div class="popup-icons">
+      <span>🌼</span> <span>🌸</span> <span>💐</span>
+    </div>
+    <div class="popup-gallery">
+      <img src="img/decor1.jpg" alt="Gallery Image 1" />
+      <img src="img/decor2.jpg" alt="Gallery Image 2" />
+      <img src="img/decor3.jpg" alt="Gallery Image 3" />
+    </div>
+  </div>
+</div>
+
+<script src="service.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff0f5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px 20px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Services Section */
+.services-section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.services-section {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  flex: 2;
+  padding-bottom: 20px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 250px;
+  height: 300px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 192, 203, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.large {
+  flex: 0 0 350px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.6);
+}
+
+.card .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #ffc0cb;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #ff69b4;
+  color: white;
+}
+
+.services-paragraph {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px 20px;
+  align-self: center;
+  color: #cc3366;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Popup Modal Styling */
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #fff;
+  color: #333;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  animation: fadeInUp 0.5s ease;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+}
+
+.popup-content h2 {
+  color: #cc3366;
+  margin-bottom: 15px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+}
+
+.popup-icons {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.popup-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.popup-gallery img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff69b4;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #cc3366;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #ffe4eb;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 4px 16px rgba(255, 192, 203, 0.4);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.testimonials-section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #cc3366;
+}
+
+.testimonials {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.testimonial {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  min-width: 250px;
+  flex: 0 0 auto;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.2);
+  transition: transform 0.3s;
+}
+
+.testimonial:hover {
+  transform: scale(1.03);
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #cc3366;
+}
+
+/* Makes testimonials in one scrollable row */
+.testimonials.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+.testimonials.scroll-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.testimonials.scroll-row::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 10px;
+}
+
+/* Essentials Section */
+.essentials-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.products {
+  display: flex;
+  gap: 20px;
+}
+
+.products img {
+  width: 150px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 192, 203, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.products img:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  max-width: 300px;
+}
+
+.product-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #cc3366;
+}
+
+.product-info p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.product-info button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.product-info button:hover {
+  background-color: #cc3366;
+}
+
+/* Stylish Title */
+.page-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #cc3366;
+}
+
+/* Centered Testimonials Section */
+.testimonials-section .testimonials.centered {
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* More squared and consistent testimonial boxes */
+.testimonial {
+  width: 260px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .services-section,
+  .testimonials,
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .essentials-section {
+    justify-content: center;
+  }
+
+  .products img {
+    width: 100px;
+  }
+
+  .popup-gallery img {
+    width: 80px;
+  }
+}
