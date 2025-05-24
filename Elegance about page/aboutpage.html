@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Elegance Flowers</title>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Montserrat:400,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e07ea7;
+            --secondary: #fff6fa;
+            --accent: #b87fa2;
+            --text: #2d1a23;
+            --white: #fff;
+            --shadow: 0 8px 32px rgba(224,126,167,0.13);
+        }
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            background: url('https://www.transparenttextures.com/patterns/flowers.png'), 
+                        linear-gradient(120deg, #fff6fa 60%, #fbe3ef 100%);
+            opacity: 0.13;
+            background-size: 600px, cover;
+            pointer-events: none;
+        }
+        header {
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 2px 16px rgba(224,126,167,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+            letter-spacing: 2.5px;
+            font-weight: 900;
+            text-shadow: 0 2px 8px #fbe3ef;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            margin-left: 2rem;
+            font-weight: 600;
+            font-size: 1.08rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+        nav a:hover, nav a:focus {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        .hero {
+            background: linear-gradient(120deg, #fff6fa 60%, #fbe3ef 100%);
+            padding: 5rem 2rem 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            letter-spacing: 1.5px;
+            text-shadow: 0 4px 24px #fbe3ef;
+        }
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #7b4a5a;
+            line-height: 1.7;
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: var(--white);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        .about-imgs {
+            flex: 1 1 380px;
+            min-width: 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(120deg, #fff6fa 60%, #fbe3ef 100%);
+            padding: 2rem 0;
+        }
+        .about-imgs .img-card {
+            width: 92%;
+            max-width: 270px;
+            aspect-ratio: 4/5;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 32px rgba(224,126,167,0.13), 0 1.5px 8px #fbe3ef;
+            border: 3px solid var(--accent);
+            background: var(--white);
+            position: relative;
+            transition: transform 0.18s;
+        }
+        .about-imgs .img-card:hover {
+            transform: scale(1.04) rotate(-1deg);
+            box-shadow: 0 12px 40px rgba(224,126,167,0.18), 0 2px 12px #fbe3ef;
+        }
+        .about-imgs img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.98) contrast(1.08) saturate(1.12);
+            transition: filter 0.2s;
+        }
+        .about-imgs .img-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,rgba(255,255,255,0.01) 60%,rgba(224,126,167,0.09) 100%);
+            pointer-events: none;
+        }
+        .about-content {
+            flex: 2 1 420px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            font-size: 2.1rem;
+            margin-bottom: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .about-content p {
+            font-size: 1.13rem;
+            line-height: 1.8;
+            margin-bottom: 1.3rem;
+        }
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .values-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1.07rem;
+        }
+        .values-list li:before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        .team-section {
+            max-width: 1100px;
+            margin: 3rem auto 2rem auto;
+            padding: 2.5rem;
+            background: var(--white);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+        }
+        .team-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            justify-content: center;
+        }
+        .member {
+            background: linear-gradient(120deg, #fff6fa 60%, #fbe3ef 100%);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(224,126,167,0.09);
+            padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.18s, box-shadow 0.18s;
+            position: relative;
+        }
+        .member:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(224,126,167,0.16);
+        }
+        .member .avatar-frame {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem auto;
+            background: linear-gradient(135deg, #fbe3ef 60%, #e07ea7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px #fbe3ef;
+            border: 3px solid var(--primary);
+            overflow: hidden;
+        }
+        .member img {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--white);
+            background: var(--white);
+            filter: brightness(0.97) contrast(1.08) saturate(1.13);
+        }
+        .member h4 {
+            margin: 0.7rem 0 0.25rem 0;
+            font-size: 1.13rem;
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+        .member p {
+            margin: 0;
+            font-size: 1.01rem;
+            color: #7b4a5a;
+        }
+        footer {
+            background: var(--white);
+            text-align: center;
+            padding: 1.2rem 0;
+            color: #c49ab3;
+            font-size: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #fbe3ef;
+            letter-spacing: 0.5px;
+        }
+        @media (max-width: 900px) {
+            .about-section {
+                flex-direction: column;
+            }
+            .about-imgs {
+                min-height: 220px;
+                flex-direction: row;
+                gap: 1rem;
+                justify-content: center;
+            }
+            .about-imgs .img-card {
+                max-width: 150px;
+            }
+            .about-content {
+                padding: 2rem 1.2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+            }
+            nav a {
+                margin: 0 1rem 0.5rem 0;
+            }
+            .about-content {
+                padding: 1.2rem;
+            }
+            .team-section {
+                padding: 1rem;
+            }
+            .about-imgs {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .about-imgs .img-card {
+                max-width: 90vw;
+            }
+            .team-members {
+                gap: 1.2rem;
+            }
+            .member {
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Artificial Elegance Flowers</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>About Elegance Flowers</h1>
+        <p>
+            At Elegance Flowers, we believe in the art of floral harmony. Our passion is to bring beauty, joy, and a touch of nature’s elegance into every moment of your life. Discover our story, our values, and the team that makes it all bloom.
+        </p>
+    </section>
+    <section class="about-section">
+        <div class="about-imgs">
+            <div class="img-card">
+                <img src="flowers1.jpg" alt="Elegant flower arrangement">
+            </div>
+            <div class="img-card">
+                <img src="flowers2.jpg" alt="Bouquet closeup">
+            </div>
+            <div class="img-card">
+                <img src="flowers3.jpg" alt="Shop interior with flowers">
+            </div>
+        </div>
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>
+                Elegance Flowers began with a simple vision: to bring timeless beauty and joy to every occasion. Our team of passionate florists crafts each arrangement with care, blending creativity and quality to deliver lasting impressions.
+            </p>
+            <h2>Our Values</h2>
+            <ul class="values-list">
+                <li>Customers always come first—your happiness is our top priority</li>
+                <li>We craft each floral design with care and creativity</li>
+                <li>We are committed to quality and lasting beauty in every bouquet</li>
+                <li>We value sustainability and support our local community</li>
+            </ul>
+        </div>
+    </section>
+    <section class="team-section">
+        <h3>Meet Our Team</h3>
+        <div class="team-members">
+            <div class="member">
+                <div class="avatar-frame">
+                    <img src="me3.jpg" alt="Manager">
+                </div>
+                <h4>Sigma B.</h4>
+                <p>Lead Manager</p>
+            </div>
+            <div class="member">
+                <div class="avatar-frame">
+                    <img src="me2.jpg" alt="Designer">
+                </div>
+                <h4>Junielle M.</h4>
+                <p>Creative Designer</p>
+            </div>
+            <div class="member">
+                <div class="avatar-frame">
+                    <img src="me1.jpg" alt="Backend Developer">
+                </div>
+                <h4>Hatdog N.</h4>
+                <p>Backend Developer</p>
+            </div>
+            <div class="member">
+                <div class="avatar-frame">
+                    <img src="joshflorist.png" alt="Florist">
+                </div>
+                <h4>Josh M.</h4>
+                <p>Senior Florist</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 Elegance Flowers. All rights reserved.
+    </footer>
+</body>
+</html>
